@@ -1,0 +1,22 @@
+var call = {
+    scope: null,//父级
+    grid: null,//网格
+    axis:"all",//上下或者左右
+    pos:false,//是否记住位置
+    handle:null,//手柄
+    moveClass:"tezml",//移动时不换位加的class
+    dragChange:false,//是否开启拖拽换位
+    changeMode:"point",//point & sort
+    cbStart:function(){},//移动前的回调函数
+    cbMove:function(){},//移动中的回调函数
+    cbEnd:function(){},//移动结束时候的回调函数
+    random:false,//是否自动随机排序
+    randomInput:null,//点击随机排序的按钮
+    animation_options:{//运动时的参数
+        duration:800,//每次运动的时间
+        easing:"ease-out"//移动时的特效，ease-out、ease-in、linear
+    },
+    disable:false,//禁止拖拽
+    disableInput:null//禁止拖拽的按钮
+};
+		

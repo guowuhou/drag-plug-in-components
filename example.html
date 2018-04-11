@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>Tdrags</title>
+<link href="demo.css" type="text/css" rel="stylesheet">
+<link rel='stylesheet' type='text/css' href='http://tools.oschina.net/js/syntaxhighlighter_3.0.83/styles/shCoreDefault.css'/>
+</head>
+<script type="text/javascript" src="JavaScript/jquery1.7.2.js"></script>
+<script type="text/javascript" src="JavaScript/Tdrag.js"></script>
+
+<body>
+<div class="boxList">
+    <div index="1" class="try" style="height: 100px;width: 100px;background: yellow;float: left;margin: 20px;">1</div>
+    <div index="2" class="try" style="height: 100px;width: 100px;background: grey;float: left;margin: 20px;">2</div>
+    <div index="3" class="try" style="height: 100px;width: 100px;background: red;float: left;margin: 20px;">3</div>
+    <div index="4" class="try" style="height: 100px;width: 100px;background: green;float: left;margin: 20px;">4</div> 
+    <div index="5" class="try" style="height: 100px;width: 100px;background: sandybrown;float: left;margin: 20px;">5</div> 
+</div>
+</body>
+<script>
+// jQuery(function(){
+//     $(".try").Tdrag({
+//         scope:".boxList",
+//         pos:true,
+//         dragChange:true,
+//         changeMode:"sort"
+//     });
+
+// })
+ $(function(){
+     $(".try").Tdrag({
+        scope:".boxList",
+        pos:true,
+        dragChange:true,
+        changeMode:"sort",
+        cbEnd:function(){
+            var indexsort=[];
+            $(".boxList").find(".try").each(function(){
+                 var curIndex=$(this).attr('index');
+                 indexsort.push(curIndex);
+            });
+            console.log(indexsort);
+        },//移动结束时候的回调函数
+    });
+ })
+</script>
+</html>
